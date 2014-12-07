@@ -1,0 +1,49 @@
+body {
+  margin: 20px;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+article {
+  clear: both;
+
+  border: 1px solid #000;
+}
+
+/* clearfix */
+article:after {
+  content: ".";   
+  display: block;   
+  height: 0;   
+  clear: both;   
+  visibility: hidden;  
+}
+
+article h1 {
+  margin: 0;
+  padding: 0;
+}
+
+article .image{
+  float: left;
+  margin-right: 20px;
+
+  font-size: 0;
+}
+
+article .image img {
+  width: 200px;
+  height: auto;
+}
+
+article .date-launch:before {
+  content: "ローンチ日: ";
+}
+
+article .role:before {
+  content: "担当領域: ";
+}
