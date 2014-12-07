@@ -35,6 +35,10 @@ article + article {
   margin-top: 20px;
 }
 
+article p + p {
+  margin-top: 8px;
+}
+
 article h1 {
   margin: 0 0 10px;
   padding: 0;
