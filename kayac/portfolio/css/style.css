@@ -54,8 +54,20 @@ article .image img {
 
 article .date-launch:before {
   content: "ローンチ日: ";
+  font-weight: bold;
 }
 
 article .role:before {
   content: "担当領域: ";
+  font-weight: bold;
+}
+
+article .description:before {
+  content: "概要: ";
+  font-weight: bold;
+}
+
+article .comment:before {
+  content: "コメント: ";
+  font-weight: bold;
 }
