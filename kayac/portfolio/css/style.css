@@ -32,7 +32,7 @@ article:after {
 }
 
 article + article {
-  margin-top: 20px;
+  margin-top: 14px;
 }
 
 article p + p {
