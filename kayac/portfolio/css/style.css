@@ -17,7 +17,7 @@ main > .link {
   margin: 0 0 20px;
 }
 
-article {
+.box {
   clear: both;
 
   padding: 10px;
@@ -28,7 +28,7 @@ article {
 }
 
 /* clearfix */
-article:after {
+.box:after {
   content: ".";   
   display: block;   
   height: 0;   
@@ -36,47 +36,55 @@ article:after {
   visibility: hidden;  
 }
 
-article + article {
+.box + .box {
   margin-top: 14px;
 }
 
-article p + p {
+.box p + p {
   margin-top: 8px;
 }
 
-article h1 {
+.box h1 {
   margin: 0 0 10px;
   padding: 0;
 }
 
-article .image{
+.box .image{
   float: left;
   margin-right: 20px;
 
   font-size: 0;
 }
 
-article .image img {
+.box .image img {
   width: 200px;
   height: auto;
 }
 
-article .date-launch:before {
+.box .date-launch:before {
   content: "ローンチ日: ";
   font-weight: bold;
 }
 
-article .role:before {
+.box .role:before {
   content: "担当領域: ";
   font-weight: bold;
 }
 
-article .description:before {
+.box .description:before {
   content: "概要: ";
   font-weight: bold;
 }
 
-article .comment:before {
+.box .comment:before {
   content: "コメント: ";
   font-weight: bold;
+}
+
+.profile {
+  background-color: #f3f0ff;
+}
+
+.profile .image img {
+  width: 160px;
 }
