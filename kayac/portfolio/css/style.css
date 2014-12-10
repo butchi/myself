@@ -88,3 +88,11 @@ main > .link {
 .profile .image img {
   width: 160px;
 }
+
+.box.service-1147 figure {
+  margin-left: 0;
+}
+
+.box.service-1147 figure img {
+  width: 400px;
+}
