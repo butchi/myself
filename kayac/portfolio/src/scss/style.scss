@@ -1,86 +1,110 @@
 @charset "UTF-8";
+
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 html {
-  font-size: 10px; }
+  font-size: 10px;
+}
 
 body {
-  font-size: 14px;
   font-size: 1.4rem;
   margin: 20px;
   padding: 0;
   font-family: "ヒラギノ角ゴPro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",Verdana,Arial,sans-serif;
-  line-height: 1.6; }
+  line-height: 1.6;
+}
 
 main {
-  display: block; }
+  display: block;
+}
 
 p {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 main > .link {
-  margin: 0 0 20px; }
+  margin: 0 0 20px;
+}
 
 .box {
   clear: both;
+
   padding: 10px;
+
   border-radius: 3px;
   box-shadow: 1px 1px 1px #666;
-  border: 1px solid #ddd; }
+  border: 1px solid #ddd;
+}
 
 /* clearfix */
 .box:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden; }
+  content: ".";   
+  display: block;   
+  height: 0;   
+  clear: both;   
+  visibility: hidden;  
+}
 
 .box + .box {
-  margin-top: 14px; }
+  margin-top: 14px;
+}
 
 .box p + p {
-  margin-top: 8px; }
+  margin-top: 8px;
+}
 
 .box h1 {
   margin: 0 0 10px;
-  padding: 0; }
+  padding: 0;
+}
 
-.box .image {
+.box .image{
   float: left;
   margin-right: 20px;
-  font-size: 0; }
+
+  font-size: 0;
+}
 
 .box .image img {
   width: 200px;
-  height: auto; }
+  height: auto;
+}
 
 .box .date-launch:before {
   content: "ローンチ日: ";
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .box .role:before {
   content: "担当領域: ";
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .box .description:before {
   content: "概要: ";
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .box .comment:before {
   content: "コメント: ";
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .profile {
-  background-color: #f3f0ff; }
+  background-color: #f3f0ff;
+}
 
 .profile .image img {
-  width: 160px; }
+  width: 160px;
+}
 
 .box.service-1147 figure {
-  margin-left: 0; }
+  margin-left: 0;
+}
 
 .box.service-1147 figure img {
-  width: 400px; }
+  width: 400px;
+}
