@@ -28,59 +28,63 @@ main > .link {
   padding: 10px;
   border-radius: 3px;
   box-shadow: 1px 1px 1px #666;
-  border: 1px solid #ddd; }
-
-/* clearfix */
-.box:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden; }
-
-.box + .box {
-  margin-top: 14px; }
-
-.box p + p {
-  margin-top: 8px; }
-
-.box h1 {
-  margin: 0 0 10px;
-  padding: 0; }
-
-.box .image {
-  float: left;
-  margin-right: 20px;
-  font-size: 0; }
-
-.box .image img {
-  width: 200px;
-  height: auto; }
-
-.box .date-launch:before {
-  content: "ローンチ日: ";
-  font-weight: bold; }
-
-.box .role:before {
-  content: "担当領域: ";
-  font-weight: bold; }
-
-.box .description:before {
-  content: "概要: ";
-  font-weight: bold; }
-
-.box .comment:before {
-  content: "コメント: ";
-  font-weight: bold; }
-
-.profile {
-  background-color: #f3f0ff; }
-
-.profile .image img {
-  width: 160px; }
+  border: 1px solid #ddd;
+  /* clearfix */ }
+  .box:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .box + .box {
+    margin-top: 14px; }
+  .box p + p {
+    margin-top: 8px; }
+  .box h1 {
+    margin: 0 0 10px;
+    padding: 0; }
+  .box ul {
+    padding: 0; }
+    .box ul li {
+      list-style-position: inside; }
+  .box .image {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-size: 0; }
+  .box .image img {
+    width: 200px;
+    height: auto; }
+  .box .date-launch:before {
+    content: "ローンチ日: ";
+    font-weight: bold; }
+  .box .prize:before {
+    content: "受賞: ";
+    font-weight: bold; }
+  .box .role:before {
+    content: "担当領域: ";
+    font-weight: bold; }
+  .box .description:before {
+    content: "概要: ";
+    font-weight: bold; }
+  .box .comment:before {
+    content: "コメント: ";
+    font-weight: bold; }
+  .box .related:before {
+    content: "関連記事: ";
+    font-weight: bold; }
+  .box .description {
+    clear: both; }
+  .box .comment {
+    clear: both; }
 
 .box.service-1147 figure {
   margin-left: 0; }
 
 .box.service-1147 figure img {
   width: 400px; }
+
+.profile {
+  background-color: #f3f0ff; }
+  .profile .image img {
+    width: 160px; }
