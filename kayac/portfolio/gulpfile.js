@@ -1,13 +1,15 @@
-const gulp = require("gulp")
-const path = require("path")
-const del = require("del")
-const browserSync = require("browser-sync").create()
-const dartSass = require("sass")
-const gulpSass = require("gulp-sass")(dartSass)
-const postcss = require("gulp-postcss")
-const autoprefixer = require("autoprefixer")
-const pug = require("gulp-pug")
-const { createGulpEsbuild } = require("gulp-esbuild")
+import gulp from "gulp"
+import { join } from "path"
+import { deleteAsync } from "del"
+import browserSyncDefault from "browser-sync"
+const browserSync = browserSyncDefault.create()
+import * as sass from "sass"
+import gulpSassDefault from "gulp-sass"
+const gulpSass = gulpSassDefault(sass)
+import postcss from "gulp-postcss"
+import autoprefixer from "autoprefixer"
+import pug from "gulp-pug"
+import { createGulpEsbuild } from "gulp-esbuild"
 
 const esbuild = createGulpEsbuild({})
 
@@ -16,31 +18,31 @@ const DEST = "."
 
 const paths = {
   pug: {
-    src: path.join(SRC, "pug/**/*.pug"),
-    entry: path.join(SRC, "pug/index.pug"),
+    src: join(SRC, "pug/**/*.pug"),
+    entry: join(SRC, "pug/index.pug"),
     dest: DEST,
   },
   styles: {
-    src: path.join(SRC, "scss/**/*.scss"),
-    entry: path.join(SRC, "scss/style.scss"),
-    dest: path.join(DEST, "css"),
+    src: join(SRC, "scss/**/*.scss"),
+    entry: join(SRC, "scss/style.scss"),
+    dest: join(DEST, "css"),
   },
   scripts: {
-    src: path.join(SRC, "js/**/*.ts"),
-    entry: path.join(SRC, "js/main.ts"),
-    dest: path.join(DEST, "js"),
+    src: join(SRC, "js/**/*.ts"),
+    entry: join(SRC, "js/main.ts"),
+    dest: join(DEST, "js"),
   },
 }
 
 function clean() {
-  return del([
-    path.join(paths.styles.dest, "**/*"),
-    path.join(paths.scripts.dest, "**/*"),
-    path.join(DEST, "index.html"),
+  return deleteAsync([
+    join(paths.styles.dest, "**/*"),
+    join(paths.scripts.dest, "**/*"),
+    join(DEST, "index.html"),
   ])
 }
 
-function html() {
+function htmlTask() {
   return gulp
     .src(paths.pug.entry)
     .pipe(pug({ pretty: true }))
@@ -48,7 +50,7 @@ function html() {
     .pipe(browserSync.stream())
 }
 
-function styles() {
+function stylesTask() {
   return gulp
     .src(paths.styles.entry, { sourcemaps: true })
     .pipe(gulpSass().on("error", gulpSass.logError))
@@ -57,7 +59,7 @@ function styles() {
     .pipe(browserSync.stream())
 }
 
-function scripts() {
+function scriptsTask() {
   return gulp
     .src(paths.scripts.entry)
     .pipe(
@@ -73,7 +75,7 @@ function scripts() {
     .pipe(browserSync.stream())
 }
 
-function serve() {
+function serveTask() {
   return browserSync.init({
     server: { baseDir: DEST },
     open: false,
@@ -81,19 +83,20 @@ function serve() {
   })
 }
 
-function watch() {
-  gulp.watch(paths.styles.src, gulp.series(styles))
-  gulp.watch(paths.scripts.src, gulp.series(scripts))
-  gulp.watch(paths.pug.src, gulp.series(html))
+function watchTask() {
+  gulp.watch(paths.styles.src, gulp.series(stylesTask))
+  gulp.watch(paths.scripts.src, gulp.series(scriptsTask))
+  gulp.watch(paths.pug.src, gulp.series(htmlTask))
 }
 
-const build = gulp.series(gulp.parallel(html, styles, scripts))
-const dev = gulp.series(build, serve, watch)
+const buildTask = gulp.series(gulp.parallel(htmlTask, stylesTask, scriptsTask))
+const devTask = gulp.series(buildTask, serveTask, watchTask)
+const defaultTask = devTask
 
-exports.clean = clean
-exports.html = html
-exports.styles = styles
-exports.scripts = scripts
-exports.build = build
-exports.dev = dev
-exports.default = dev
+export { clean }
+export { htmlTask as html }
+export { stylesTask as styles }
+export { scriptsTask as scripts }
+export { buildTask as build }
+export { devTask as dev }
+export { defaultTask as default }
