@@ -4,43 +4,41 @@
   "description": "The portfolio by IWABUCHI Yuuki in KAYAC Inc.",
   "main": "js/main.min.js",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=18.0.0"
   },
   "scripts": {
-    "start": "gulp",
-    "serve": "gulp serve",
+    "clean": "gulp clean",
     "build": "gulp build",
-    "watch": "gulp watch"
+    "dev": "gulp dev"
   },
   "keywords": [
-    "portfolio", "self introduction"
+    "portfolio",
+    "self introduction"
   ],
   "author": "IWABUCHI Yuuki",
   "license": "MIT",
   "devDependencies": {
-    "babel-preset-es2015": "^6.1.18",
-    "babelify": "^7.2.0",
-    "browser-sync": "^2.11.1",
-    "browserify": "^13.0.0",
-    "coffee-script": "^1.10.0",
-    "debowerify": "^1.3.1",
-    "gulp": "git://github.com/gulpjs/gulp.git#4.0",
-    "gulp-babel": "^6.1.0",
-    "gulp-decodecode": "^0.1.0",
-    "gulp-jade": "^1.1.0",
-    "gulp-pleeease": "^2.0.2",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.2.0",
-    "gulp-uglify": "^1.5.1",
-    "gulp-webserver": "^0.9.1",
-    "vinyl-source-stream": "^1.1.0"
+    "@types/browser-sync": "^2.29.0",
+    "@types/gulp": "^4.0.17",
+    "@types/gulp-postcss": "^8.0.6",
+    "@types/gulp-sass": "^5.0.4",
+    "@types/node": "^20.14.10",
+    "autoprefixer": "^10.4.20",
+    "browser-sync": "^2.29.3",
+    "del": "^7.1.0",
+    "esbuild": "^0.21.5",
+    "gulp": "^4.0.2",
+    "gulp-esbuild": "^0.12.0",
+    "gulp-postcss": "^9.1.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.77.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
   },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
-  },
-  "dependencies": {
-    "bower": "^1.7.7"
-  }
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
